@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,700;1,500&display=swap");
+
+$orange:#f79d65;
+$light-orange:#f7b267;
+$dark-orange:#f4845f;
+$light-red:#f27058;
+$dark-red:#f25c54;
+$steel-blue:#5b85aa;
+$purple-navy:#414770;
+$black:#000000;
+$white:#ffffff;
+$main:"Red Hat Display",
+sans-serif;
+$secondary:"Zilla Slab",
+sans-serif;
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    padding-inline-start: 0;
+    margin-block-start: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100vh;
+}
+
+
+/* Index */
+#index {
+    header {
+        padding: 2em 4em;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+
+        h1 {
+            font-family: $main;
+            margin: 0;
+            color: $white;
+            font-size: 2em;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+
+            li:last-child {
+                margin-left: auto;
+            }
+
+            li img {
+                max-width: 12em;
+            }
+
+            li a {
+                text-decoration: none;
+                font-family: "Red Hat Display";
+                color: $orange;
+                background-color: $white;
+                padding: 1em 2em;
+                border-radius: 2em;
+                font-size: 1.1em;
+            }
+        }
+    }
+
+    section {
+        background-image: url('../images/bannerimage.jpg');
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        text-align: center;
+        position: relative;
+        z-index: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(244, 132, 95, 0.2);
+            z-index: -1;
+        }
+
+        article {
+            h2 {
+                font-family: $main;
+                margin: 0;
+                color: $white;
+                font-size: 5em;
+            }
+
+            p {
+                color: $white;
+                font-family: $secondary;
+            }
+
+            p:last-child {
+                margin-top: 2.5em;
+            }
+
+            a {
+                text-decoration: none;
+                font-family: $main;
+                color: $white;
+                background-color: $orange;
+                padding: 1em 2em;
+                border-radius: 2em;
+                font-size: 1.1em;
+            }
+        }
+    }
+}
