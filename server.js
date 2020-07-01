@@ -1,7 +1,7 @@
+/* eslint-disable no-undef */
 const express = require('express');
 const app = express();
 const port = 3000;
-
 const sassMiddleware = require('node-sass-middleware');
 const router = require('./src/router.js');
 

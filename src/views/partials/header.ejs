@@ -1,0 +1,25 @@
+<header>
+    <nav>
+        <a href="/">
+            <h1>MeetYou</h1>
+        </a>
+        <% if (title != 'Login' || title !== 'Register')  { %>
+        <div>
+            <ul>
+                <a href="/discover">
+                    <li><img src="../images/discover.png" alt="discover"></li>
+                </a>
+                <a href="/matches">
+                    <li><img src="../images/matches.png" alt="matches"></li>
+                </a>
+                <a href="/edit-profile">
+                    <li><img src="../images/profile.png" alt="profile"></li>
+                </a>
+                <form action="/signout" method="POST">
+                    <button><img src="../images/logout.png" alt="logout"></button>
+                </form>
+            </ul>
+        </div>
+        <% } %>
+    </nav>
+</header>

@@ -10,11 +10,40 @@ ul {
   padding-inline-start: 0;
   margin-block-start: 0; }
 
+a {
+  text-decoration: none; }
+
 body {
   margin: 0;
   padding: 0;
   position: relative;
-  height: 100vh; }
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f79d65;
+  align-items: center; }
+  body > section {
+    background-color: #ffffff;
+    margin: 2em auto;
+    padding: 3em 2em;
+    border-radius: 2em;
+    max-width: 50%; }
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  header nav > div {
+    margin-top: 1.5em; }
+    header nav > div ul {
+      width: 315px;
+      justify-content: space-between;
+      display: flex;
+      flex-wrap: wrap; }
+  header h1 {
+    text-align: center;
+    font-size: 2.5em; }
 
 /* Index */
 #index header {
@@ -82,3 +111,43 @@ body {
     padding: 1em 2em;
     border-radius: 2em;
     font-size: 1.1em; }
+
+#login section {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff; }
+  #login section div:first-of-type p {
+    font-family: "Zilla Slab", sans-serif; }
+  #login section div:last-of-type form {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #f79d65;
+    padding-bottom: 1em;
+    max-width: 50%;
+    margin: 0 auto; }
+    #login section div:last-of-type form label {
+      font-family: "Zilla Slab", sans-serif;
+      margin-bottom: 0.5em; }
+    #login section div:last-of-type form input {
+      margin-bottom: 1.2em;
+      height: 35px;
+      border: 1px solid #b8b8b8;
+      border-radius: 0.2em;
+      padding-left: 0.5em; }
+    #login section div:last-of-type form button {
+      text-decoration: none;
+      border: none;
+      font-size: 1em;
+      outline: none;
+      background-color: #ffffff;
+      cursor: pointer;
+      border: 1px solid #f79d65;
+      padding: 0.6em; }
+  #login section div:last-of-type a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #f79d65;
+    border: 1px solid #f79d65;
+    padding: 0.7em 2em; }
+  #login section > div {
+    flex: 0 50%; }

@@ -27,11 +27,52 @@ ul {
     margin-block-start: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     margin: 0;
     padding: 0;
     position: relative;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: $orange;
+    align-items: center;
+
+    &>section {
+        background-color: $white;
+        margin: 2em auto;
+        padding: 3em 2em;
+        border-radius: 2em;
+        max-width: 50%;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    nav {
+        &>div {
+            margin-top: 1.5em;
+
+            ul {
+                width: 315px;
+                justify-content: space-between;
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2.5em;
+    }
 }
 
 
@@ -127,3 +168,71 @@ body {
         }
     }
 }
+
+#login {
+    section {
+        display: flex;
+        justify-content: space-between;
+        background-color: $white;
+
+        div:first-of-type {
+
+            p {
+                font-family: $secondary;
+            }
+        }
+
+        div:last-of-type {
+            form {
+                display: flex;
+                flex-direction: column;
+                border-bottom: 1px solid $orange;
+                padding-bottom: 1em;
+                max-width: 50%;
+                margin: 0 auto;
+
+                label {
+                    font-family: $secondary;
+                    margin-bottom: 0.5em;
+                }
+
+                input {
+                    margin-bottom: 1.2em;
+                    height: 35px;
+                    border: 1px solid #b8b8b8;
+                    border-radius: 0.2em;
+                    padding-left: 0.5em;
+                }
+
+                button {
+                    text-decoration: none;
+                    border: none;
+                    font-size: 1em;
+                    outline: none;
+                    background-color: $white;
+                    cursor: pointer;
+                    border: 1px solid $orange;
+                    padding: 0.6em;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: $white;
+                background-color: $orange;
+                border: 1px solid $orange;
+                padding: 0.7em 2em;
+            }
+        }
+
+        &>div {
+            flex: 0 50%;
+        }
+
+
+
+
+    }
+}
+
+#register {}
