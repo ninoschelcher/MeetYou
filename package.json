@@ -1,0 +1,36 @@
+{
+  "name": "meetyou",
+  "version": "1.0.0",
+  "description": "MeetYou is a dating app",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ninoschelcher/MeetYou.git"
+  },
+  "keywords": [
+    "dating",
+    "app",
+    "nodejs",
+    "express"
+  ],
+  "author": "Nino Schelcher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ninoschelcher/MeetYou/issues"
+  },
+  "homepage": "https://github.com/ninoschelcher/MeetYou#readme",
+  "dependencies": {
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.20",
+    "npm": "^6.14.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "nodemon": "^2.0.4"
+  }
+}
