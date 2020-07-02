@@ -19,6 +19,7 @@ sans-serif;
 ::before,
 ::after {
     box-sizing: border-box;
+    font-family: $main;
 }
 
 ul {
@@ -29,9 +30,14 @@ ul {
 
 a {
     text-decoration: none;
+    color: $orange;
 }
 
-body {
+h1 {
+    margin: 0;
+}
+
+body:not(#index) {
     margin: 0;
     padding: 0;
     position: relative;
@@ -40,6 +46,7 @@ body {
     flex-direction: column;
     background-color: $orange;
     align-items: center;
+    margin-top: 2em;
 
     &>section {
         background-color: $white;
@@ -50,7 +57,7 @@ body {
     }
 }
 
-header {
+header:not(#index header) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,6 +72,22 @@ header {
                 justify-content: space-between;
                 display: flex;
                 flex-wrap: wrap;
+
+                li,
+                button {
+                    background-color: #fff;
+                    padding: 1em;
+                    border-radius: 100%;
+                    width: 60px;
+                    height: 60px;
+                    text-align: center;
+                    border: none;
+                    cursor: pointer;
+                }
+
+                img {
+                    width: 1.5em;
+                }
             }
         }
     }
@@ -72,12 +95,18 @@ header {
     h1 {
         text-align: center;
         font-size: 2.5em;
+        color: $white;
     }
 }
 
 
 /* Index */
 #index {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100vh;
+
     header {
         padding: 2em 4em;
         position: absolute;
@@ -183,12 +212,16 @@ header {
         }
 
         div:last-of-type {
+            flex-direction: column;
+            align-items: center;
+            display: flex;
+
             form {
                 display: flex;
                 flex-direction: column;
                 border-bottom: 1px solid $orange;
                 padding-bottom: 1em;
-                max-width: 50%;
+                width: 60%;
                 margin: 0 auto;
 
                 label {
@@ -206,10 +239,10 @@ header {
 
                 button {
                     text-decoration: none;
-                    border: none;
                     font-size: 1em;
                     outline: none;
                     background-color: $white;
+                    color: $orange;
                     cursor: pointer;
                     border: 1px solid $orange;
                     padding: 0.6em;

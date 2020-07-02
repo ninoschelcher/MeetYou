@@ -3,7 +3,8 @@
 *,
 ::before,
 ::after {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: "Red Hat Display", sans-serif; }
 
 ul {
   list-style: none;
@@ -11,9 +12,13 @@ ul {
   margin-block-start: 0; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #f79d65; }
 
-body {
+h1 {
+  margin: 0; }
+
+body:not(#index) {
   margin: 0;
   padding: 0;
   position: relative;
@@ -21,15 +26,16 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #f79d65;
-  align-items: center; }
-  body > section {
+  align-items: center;
+  margin-top: 2em; }
+  body:not(#index) > section {
     background-color: #ffffff;
     margin: 2em auto;
     padding: 3em 2em;
     border-radius: 2em;
     max-width: 50%; }
 
-header {
+header:not(#index header) {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,76 +47,93 @@ header {
       justify-content: space-between;
       display: flex;
       flex-wrap: wrap; }
+      header nav > div ul li,
+      header nav > div ul button {
+        background-color: #fff;
+        padding: 1em;
+        border-radius: 100%;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        border: none;
+        cursor: pointer; }
+      header nav > div ul img {
+        width: 1.5em; }
   header h1 {
     text-align: center;
-    font-size: 2.5em; }
+    font-size: 2.5em;
+    color: #ffffff; }
 
 /* Index */
-#index header {
-  padding: 2em 4em;
-  position: absolute;
-  z-index: 1;
-  width: 100%; }
-  #index header h1 {
-    font-family: "Red Hat Display", sans-serif;
-    margin: 0;
-    color: #ffffff;
-    font-size: 2em; }
-  #index header nav ul {
+#index {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 100vh; }
+  #index header {
+    padding: 2em 4em;
+    position: absolute;
+    z-index: 1;
+    width: 100%; }
+    #index header h1 {
+      font-family: "Red Hat Display", sans-serif;
+      margin: 0;
+      color: #ffffff;
+      font-size: 2em; }
+    #index header nav ul {
+      display: flex;
+      align-items: center; }
+      #index header nav ul li:last-child {
+        margin-left: auto; }
+      #index header nav ul li img {
+        max-width: 12em; }
+      #index header nav ul li a {
+        text-decoration: none;
+        font-family: "Red Hat Display";
+        color: #f79d65;
+        background-color: #ffffff;
+        padding: 1em 2em;
+        border-radius: 2em;
+        font-size: 1.1em; }
+  #index section {
+    background-image: url("../images/bannerimage.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    z-index: 0;
     display: flex;
-    align-items: center; }
-    #index header nav ul li:last-child {
-      margin-left: auto; }
-    #index header nav ul li img {
-      max-width: 12em; }
-    #index header nav ul li a {
+    align-items: center;
+    justify-content: center; }
+    #index section::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(244, 132, 95, 0.2);
+      z-index: -1; }
+    #index section article h2 {
+      font-family: "Red Hat Display", sans-serif;
+      margin: 0;
+      color: #ffffff;
+      font-size: 5em; }
+    #index section article p {
+      color: #ffffff;
+      font-family: "Zilla Slab", sans-serif; }
+    #index section article p:last-child {
+      margin-top: 2.5em; }
+    #index section article a {
       text-decoration: none;
-      font-family: "Red Hat Display";
-      color: #f79d65;
-      background-color: #ffffff;
+      font-family: "Red Hat Display", sans-serif;
+      color: #ffffff;
+      background-color: #f79d65;
       padding: 1em 2em;
       border-radius: 2em;
       font-size: 1.1em; }
-
-#index section {
-  background-image: url("../images/bannerimage.jpg");
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  text-align: center;
-  position: relative;
-  z-index: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  #index section::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(244, 132, 95, 0.2);
-    z-index: -1; }
-  #index section article h2 {
-    font-family: "Red Hat Display", sans-serif;
-    margin: 0;
-    color: #ffffff;
-    font-size: 5em; }
-  #index section article p {
-    color: #ffffff;
-    font-family: "Zilla Slab", sans-serif; }
-  #index section article p:last-child {
-    margin-top: 2.5em; }
-  #index section article a {
-    text-decoration: none;
-    font-family: "Red Hat Display", sans-serif;
-    color: #ffffff;
-    background-color: #f79d65;
-    padding: 1em 2em;
-    border-radius: 2em;
-    font-size: 1.1em; }
 
 #login section {
   display: flex;
@@ -118,36 +141,40 @@ header {
   background-color: #ffffff; }
   #login section div:first-of-type p {
     font-family: "Zilla Slab", sans-serif; }
-  #login section div:last-of-type form {
-    display: flex;
+  #login section div:last-of-type {
     flex-direction: column;
-    border-bottom: 1px solid #f79d65;
-    padding-bottom: 1em;
-    max-width: 50%;
-    margin: 0 auto; }
-    #login section div:last-of-type form label {
-      font-family: "Zilla Slab", sans-serif;
-      margin-bottom: 0.5em; }
-    #login section div:last-of-type form input {
-      margin-bottom: 1.2em;
-      height: 35px;
-      border: 1px solid #b8b8b8;
-      border-radius: 0.2em;
-      padding-left: 0.5em; }
-    #login section div:last-of-type form button {
+    align-items: center;
+    display: flex; }
+    #login section div:last-of-type form {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid #f79d65;
+      padding-bottom: 1em;
+      width: 60%;
+      margin: 0 auto; }
+      #login section div:last-of-type form label {
+        font-family: "Zilla Slab", sans-serif;
+        margin-bottom: 0.5em; }
+      #login section div:last-of-type form input {
+        margin-bottom: 1.2em;
+        height: 35px;
+        border: 1px solid #b8b8b8;
+        border-radius: 0.2em;
+        padding-left: 0.5em; }
+      #login section div:last-of-type form button {
+        text-decoration: none;
+        font-size: 1em;
+        outline: none;
+        background-color: #ffffff;
+        color: #f79d65;
+        cursor: pointer;
+        border: 1px solid #f79d65;
+        padding: 0.6em; }
+    #login section div:last-of-type a {
       text-decoration: none;
-      border: none;
-      font-size: 1em;
-      outline: none;
-      background-color: #ffffff;
-      cursor: pointer;
+      color: #ffffff;
+      background-color: #f79d65;
       border: 1px solid #f79d65;
-      padding: 0.6em; }
-  #login section div:last-of-type a {
-    text-decoration: none;
-    color: #ffffff;
-    background-color: #f79d65;
-    border: 1px solid #f79d65;
-    padding: 0.7em 2em; }
+      padding: 0.7em 2em; }
   #login section > div {
     flex: 0 50%; }
